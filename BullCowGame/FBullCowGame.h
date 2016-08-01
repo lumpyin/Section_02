@@ -36,10 +36,11 @@ public:
 	 void Reset();
 	 
 
-	 FBullCowCount SubmitGuess(FString);
+	 FBullCowCount SubmitValidGuess(FString);
 
 private:
 	int32 MyCurrentTry;
 	int32 MyMaxTries;
 	FString  MyHiddenWord;
+	bool bGameIsWon;
 };

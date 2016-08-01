@@ -95,13 +95,11 @@ void PlayGame()
 	
 	int32 MaxTries = BCGame.GetMaxTries();
 
-	for (int32 i = 0; i < MaxTries; i++) {
+	while(!BCGame.IsGameWon() && BCGame.GetCurrentTry()<=MaxTries) {
+
 		FText Guess = GetValidGuess();
 
-		
-
-
-		FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
+		FBullCowCount BullCowCount = BCGame.SubmitValidGuess(Guess);
 
 		std::cout << "BUlls = " << BullCowCount.Bulls;
 		std::cout << ". Cows = " << BullCowCount.Cows << std::endl;
