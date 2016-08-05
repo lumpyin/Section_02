@@ -11,6 +11,7 @@ void PrintIntro();
 void PlayGame();
 FText GetValidGuess();
 bool AskToPlayAgain();
+void PrintGameSummary();
 
 FBullCowGame BCGame;
 
@@ -89,6 +90,17 @@ bool AskToPlayAgain()
 	return (Respone[0] == 'y');
 }
 
+void PrintGameSummary()
+{
+	if (BCGame.IsGameWon()) {
+		std::cout << "well done \n";
+	}
+	else
+	{
+		std::cout << "Better luck nect you\n";
+	}
+}
+
 void PlayGame()
 {
 	BCGame.Reset();
@@ -106,4 +118,7 @@ void PlayGame()
 		
 		std::cout << std::endl;
 	}
+
+	PrintGameSummary();
+	return;
 }
